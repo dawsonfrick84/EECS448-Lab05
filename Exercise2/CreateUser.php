@@ -14,15 +14,14 @@ if ($result = $mysqli->query($query)) {
   printf("Connection success<br>Passed in user id: %s<br>", $user);
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
-        printf ("%s (%s)<br>", $row["user_id"]);
         if ($row["user_id"]==$user){
           $write=false;
         }
+        // echo "id: " . $row["user_id"]. " <br>"; //show all users
     }
-    if ($write=true){
+    if ($write==TRUE){
       printf("Adding user to database...<br>");
-      $sql = "INSERT INTO Users (user_id)
-      VALUES ($user)";
+      $sql = "INSERT INTO Users (user_id) VALUES ('$user')";
 
       if ($mysqli->query($sql) === TRUE) {
         printf("User created successfully<br>");
@@ -31,10 +30,15 @@ if ($result = $mysqli->query($query)) {
         printf("Error: " . $sql . "<br>" . $conn->error);
       }
     }
+    else {
+      printf("User already exists!");
+    }
+
 
     /* free result set */
     $result->free();
 }
+
 
 /* close connection */
 $mysqli->close();
