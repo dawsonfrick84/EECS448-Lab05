@@ -6,6 +6,9 @@ if($user!=""&&$mypost!=""){
 
   if ($mysqli->connect_errno) {
       printf("Connect failed: %s<br>", $mysqli->connect_error);
+      echo"<br><a href='../Exercise3/CreatePosts.html'>Return to Create Posts</a><br>";
+      echo"<a href='../Exercise2/CreateUser.html'>Go to Create User</a><br>";
+      echo"<a href='../Exercise6/ViewPosts.php'>Go to View Posts</a></html>";
       exit();
   }
 
@@ -22,6 +25,9 @@ if($user!=""&&$mypost!=""){
       }
       if ($write==FALSE){
         printf("User does not exist<br>");
+        echo"<br><a href='../Exercise3/CreatePosts.html'>Return to Create Posts</a><br>";
+        echo"<a href='../Exercise2/CreateUser.html'>Go to Create User</a><br>";
+        echo"<a href='../Exercise6/ViewPosts.php'>Go to View Posts</a></html>";
       }
       $result->free();
   }
@@ -32,10 +38,16 @@ if($user!=""&&$mypost!=""){
     printf("Posts Connection success<br>Passed in post: %s<br>", $mypost);
     $sql = "INSERT INTO Posts (content, author_id) VALUES ('$mypost', '$user')";
       if ($mysqli->query($sql) === TRUE) {
-        printf("Post created successfully<br>");
+        echo"Post created successfully<br>";
+        echo"<br><a href='../Exercise3/CreatePosts.html'>Return to Create Posts</a><br>";
+        echo"<a href='../Exercise2/CreateUser.html'>Go to Create User</a><br>";
+        echo"<a href='../Exercise6/ViewPosts.php'>Go to View Posts</a></html>";
       }
       else {
         printf("Error: " . $sql . "<br>" . $conn->error);
+        echo"<br><a href='../Exercise3/CreatePosts.html'>Return to Create Posts</a><br>";
+        echo"<a href='../Exercise2/CreateUser.html'>Go to Create User</a><br>";
+        echo"<a href='../Exercise6/ViewPosts.php'>Go to View Posts</a></html>";
       }
 
       $result->free();
@@ -44,8 +56,10 @@ if($user!=""&&$mypost!=""){
   }
 else{
   echo "User ID/Post content cannot be blank<br>";
+  echo"<br><a href='../Exercise3/CreatePosts.html'>Return to Create Posts</a><br>";
+  echo"<a href='../Exercise2/CreateUser.html'>Go to Create User</a><br>";
+  echo"<a href='../Exercise6/ViewPosts.php'>Go to View Posts</a></html>";
 }
-echo"<br><a href='../Exercise3/CreatePosts.html'>Return to Create Posts</a><br>";
-echo"<a href='../Exercise2/CreateUser.html'>Go to Create User</a><br>";
-echo"<a href='../Exercise4/AdminHome.html'>Go to Admin Page</a>";
+
+
 ?>
