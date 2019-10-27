@@ -45,5 +45,5 @@ else{
 }
 echo"<br><a href='../Exercise2/CreateUser.html'>Return to Create User</a><br>";
 echo"<a href='../Exercise3/CreatePosts.html'>Go to Create Posts</a><br>";
-echo"<a href='../Exercise4/AdminHome.html'>Go to Admin Page</a>";
+
 ?>
