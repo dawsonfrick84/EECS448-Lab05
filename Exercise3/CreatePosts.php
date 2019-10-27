@@ -43,6 +43,9 @@ if($user!=""&&$mypost!=""){
   $mysqli->close();
   }
 else{
-  echo "User ID/Post content cannot be blank";
+  echo "User ID/Post content cannot be blank<br>";
 }
+echo"<br><a href='../Exercise3/CreatePosts.html'>Return to Create Posts</a><br>";
+echo"<a href='../Exercise2/CreateUser.html'>Go to Create User</a><br>";
+echo"<a href='../Exercise4/AdminHome.html'>Go to Admin Page</a>";
 ?>
